@@ -74,7 +74,7 @@ export default {
 
       splitSmallLinks.forEach(link => {
         const fragments = link.split(",").map(fragment => fragment.trim());
-        const text = fragments[0];
+        const text = html(fragments[0]).text();
         const className = getClassName(text);
         const href = fragments[1];
         const target = fragments[2] === "blank" ? "_blank" : "";
